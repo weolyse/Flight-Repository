@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="FlightRepository:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/FlightRepository_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="FlightRepository/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="FlightRepository" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
