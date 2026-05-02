@@ -11,6 +11,8 @@ import java.util.Optional;
 
 public class FlightDao implements Dao<Long, Flight> {
 
+    private static final FlightDao INSTANCE = new FlightDao();
+
     private static final String FIND_ALL_SQL = """
             SELECT *
             FROM flight
@@ -19,6 +21,12 @@ public class FlightDao implements Dao<Long, Flight> {
     private static final String FIND_BY_ID_SQL = FIND_ALL_SQL + """
             WHERE id=?
             """;
+
+    private FlightDao(){};
+
+    public static FlightDao getInstance() {
+        return INSTANCE;
+    }
 
 
     @Override
