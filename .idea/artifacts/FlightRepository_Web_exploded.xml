@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="FlightRepository" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="postgresql-42.7.10" />
+          <element id="library" level="project" name="servlet-api" />
+        </element>
       </element>
     </root>
   </artifact>

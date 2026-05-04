@@ -21,11 +21,12 @@ public class FlightServlet extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding(StandardCharsets.UTF_8.name());
         try (PrintWriter writer = resp.getWriter()) {
+            writer.write("<h1>Список всех перелетов</h1>");
             writer.write("<ul>");
             flightService.getAllFlights().forEach( flightDto -> {
                         writer.write("<li>");
                         writer.write("""
-                                %d. %s
+                                <a href="/tickets?flightId=%d"> %s </a>
                                 """.formatted(flightDto.getId(), flightDto.getDescription()));
                         writer.write("</li>");
             });

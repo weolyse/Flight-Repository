@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FlightRepository:Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/FlightRepository_Web</output-path>
+    <root id="archive" name="FlightRepository_Web.war">
+      <element id="artifact" artifact-name="FlightRepository:Web exploded" />
+    </root>
+  </artifact>
+</component>

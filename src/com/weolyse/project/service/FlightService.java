@@ -21,7 +21,7 @@ public class FlightService {
                 .map(flight -> new FlightDto(
                         flight.getId(),
                         """
-//                                Departure date: %s Arrival date: %s Status: %s
+                                Departure date: %s Arrival date: %s Status: %s
                                 """.formatted(flight.getDepartureDate().toString(), flight.getArrivalDate().toString(), flight.getStatus().toString())
                         )
                 ).toList();
