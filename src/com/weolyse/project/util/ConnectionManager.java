@@ -1,10 +1,13 @@
 package com.weolyse.project.util;
 
+import lombok.SneakyThrows;
+import lombok.experimental.UtilityClass;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
-public final class ConnectionManager {
+@UtilityClass
+public class ConnectionManager {
 
     private static final String URL_KEY = "db.url";
     private static final String USER_KEY = "db.user";
@@ -22,17 +25,12 @@ public final class ConnectionManager {
         }
     }
 
-    private ConnectionManager() {};
-
+    @SneakyThrows
     public static Connection open() {
-        try {
             return DriverManager.getConnection(
                     PropertiesUtil.getValue(URL_KEY),
                     PropertiesUtil.getValue(USER_KEY),
                     PropertiesUtil.getValue(PASSWORD_KEY)
             );
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

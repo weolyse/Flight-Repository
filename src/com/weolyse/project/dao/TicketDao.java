@@ -39,6 +39,7 @@ public class TicketDao implements Dao<Long, Ticket> {
         try (var connection = ConnectionManager.open();
              var statement = connection.prepareStatement(FIND_ALL_BY_FLIGHTID)) {
 
+            statement.setLong(1, flightId);
             ResultSet resultSet = statement.executeQuery();
             ArrayList<Ticket> tickets = new ArrayList<>();
             while (resultSet.next()) {

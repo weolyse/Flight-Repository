@@ -1,18 +1,19 @@
 package com.weolyse.project.util;
 
+import lombok.experimental.UtilityClass;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public final class PropertiesUtil {
+@UtilityClass
+public class PropertiesUtil {
 
     private static final Properties PROPERTIES = new Properties();
 
     static {
         loadProperties();
     }
-
-    private PropertiesUtil(){};
 
     private static void loadProperties() {
         try (InputStream resourceAsStream = PropertiesUtil.class.getClassLoader().getResourceAsStream("application.properties")) {
@@ -22,7 +23,7 @@ public final class PropertiesUtil {
         }
     }
 
-    static String getValue(String key) {
+    public static String getValue(String key) {
         return PROPERTIES.getProperty(key);
     }
 
